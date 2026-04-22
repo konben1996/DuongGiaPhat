@@ -26,7 +26,14 @@
         </button>
 
         <div class="header__actions">
-          <a class="login-btn" >Đăng nhập</a>
+          <button
+            type="button"
+            class="login-btn"
+            id="openLoginModal"
+            aria-label="Mở popup đăng nhập"
+          >
+            Đăng nhập
+          </button>
           <button type="button" class="theme-toggle" id="themeToggle" aria-label="Chuyển giao diện sáng tối">
             <span class="theme-toggle__icon" aria-hidden="true">🌙</span>
           </button>
@@ -77,6 +84,42 @@
     </footer>
   `;
 
+  const loginModalHTML = `
+    <div class="modal" id="loginModal" aria-hidden="true">
+      <div class="modal__overlay" data-close-modal="loginModal"></div>
+      <div class="modal__content modal__content--auth" role="dialog" aria-modal="true" aria-labelledby="loginModalTitle">
+        <button type="button" class="modal__close" data-close-modal="loginModal" aria-label="Đóng popup đăng nhập">✕</button>
+        <div class="auth-panel">
+          <div class="auth-panel__header">
+            <span class="section-kicker">Đăng nhập</span>
+            <h3 id="loginModalTitle">Chào mừng bạn quay lại</h3>
+            <p>Đăng nhập để lưu sản phẩm yêu thích, xem lịch sử và nhận ưu đãi cá nhân hoá.</p>
+          </div>
+          <form class="auth-form" id="loginForm">
+            <label>
+              <span>Email hoặc số điện thoại</span>
+              <input type="text" name="identity" id="loginIdentity" autocomplete="username" placeholder="Nhập email hoặc số điện thoại" />
+            </label>
+            <label>
+              <span>Mật khẩu</span>
+              <input type="password" name="password" id="loginPassword" autocomplete="current-password" placeholder="Nhập mật khẩu" />
+            </label>
+            <div class="checkbox-line">
+              <input type="checkbox" id="rememberLogin" name="rememberLogin" />
+              <label for="rememberLogin">Ghi nhớ đăng nhập</label>
+            </div>
+            <button type="submit" class="btn btn--primary btn--block">Đăng nhập</button>
+            <button type="button" class="btn btn--light btn--block" data-close-modal="loginModal">Đóng</button>
+            <p class="auth-link">
+              Chưa có tài khoản? <a href="#" class="auth-link__action">Đăng ký tài khoản</a>
+            </p>
+            <p class="auth-status" id="loginStatus" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  `;
+
   function renderHeader(target = document.getElementById("siteHeader")) {
     if (target) target.innerHTML = headerHTML;
   }
@@ -85,9 +128,14 @@
     if (target) target.innerHTML = footerHTML;
   }
 
+  function renderLoginModal(target = document.getElementById("siteModal")) {
+    if (target) target.innerHTML = loginModalHTML;
+  }
+
   function renderLayout() {
     renderHeader();
     renderFooter();
+    renderLoginModal();
   }
 
   window.DuongGiaStoreLayout = {

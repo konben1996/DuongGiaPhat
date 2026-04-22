@@ -686,7 +686,7 @@ img {
   color: var(--text-soft);
   transition: all var(--transition);
 }
-.tab-btn.is-active, .tab-btn:hover {
+.tab-btn.is-active, .tab-btn:hover, .tab-btn:focus-visible {
   background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   color: #fff;
   border-color: transparent;
@@ -1122,6 +1122,9 @@ img {
 .modal.is-open {
   display: block;
 }
+.modal#loginModal {
+  overflow-y: hidden;
+}
 .modal__overlay {
   position: absolute;
   inset: 0;
@@ -1143,6 +1146,12 @@ img {
 .modal__content--product {
   width: min(100% - 24px, 900px);
 }
+.modal__content--auth {
+  width: min(100% - 24px, 520px);
+  margin: max(28px, 12vh) auto 24px;
+  max-height: none;
+  overflow-y: hidden;
+}
 .modal__close {
   position: absolute;
   top: 14px;
@@ -1151,6 +1160,57 @@ img {
   height: 42px;
   border-radius: 999px;
   background: var(--surface-2);
+}
+
+.auth-panel {
+  display: grid;
+  gap: 20px;
+}
+.auth-panel__header {
+  display: grid;
+  gap: 10px;
+}
+.auth-panel__header h3 {
+  margin: 0;
+  font-size: clamp(24px, 3vw, 32px);
+  line-height: 1.25;
+}
+.auth-panel__header p {
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.7;
+}
+
+.auth-form label {
+  display: grid;
+  gap: 8px;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 600;
+}
+.auth-form input[type=checkbox] {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--primary);
+}
+.auth-form .btn {
+  min-height: 48px;
+}
+
+.auth-link {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: center;
+}
+.auth-link__action {
+  color: var(--primary);
+  font-weight: 700;
+}
+.auth-link__action:hover, .auth-link__action:focus-visible {
+  text-decoration: underline;
 }
 
 .product-modal {
@@ -1564,6 +1624,13 @@ img {
   }
   .modal__content {
     margin: 12px auto 20px;
+    max-height: calc(100vh - 32px);
+  }
+  .modal#loginModal {
+    overflow-y: auto;
+  }
+  .modal__content--auth {
+    overflow-y: auto;
     max-height: calc(100vh - 32px);
   }
   .product-modal__visual {

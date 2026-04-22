@@ -33,6 +33,13 @@ const elements = {
   globalBackdrop: document.getElementById("globalBackdrop"),
   productModal: document.getElementById("productModal"),
   productModalContent: document.getElementById("productModalContent"),
+  loginModal: document.getElementById("loginModal"),
+  openLoginModal: document.getElementById("openLoginModal"),
+  loginForm: document.getElementById("loginForm"),
+  loginStatus: document.getElementById("loginStatus"),
+  loginIdentity: document.getElementById("loginIdentity"),
+  loginPassword: document.getElementById("loginPassword"),
+  rememberLogin: document.getElementById("rememberLogin"),
   toast: document.getElementById("toast"),
   backToTop: document.getElementById("backToTop"),
   themeToggle: document.getElementById("themeToggle"),
@@ -262,10 +269,11 @@ function showToast(message) {
 
 function setOverlayVisibility() {
   const hasDrawerOpen = elements.mobileDrawer.classList.contains("is-open");
-  const hasModalOpen = elements.productModal.classList.contains("is-open");
+  const hasProductModalOpen = elements.productModal.classList.contains("is-open");
+  const hasLoginModalOpen = elements.loginModal?.classList.contains("is-open");
 
-  elements.globalBackdrop.hidden = !hasDrawerOpen;
-  elements.body.classList.toggle("is-locked", hasDrawerOpen || hasModalOpen);
+  elements.globalBackdrop.hidden = !(hasDrawerOpen || hasLoginModalOpen);
+  elements.body.classList.toggle("is-locked", hasDrawerOpen || hasProductModalOpen || hasLoginModalOpen);
 }
 
 function openDrawer(drawer) {
@@ -282,6 +290,49 @@ function closeDrawer(drawer) {
 
 function closeAllDrawers() {
   closeDrawer(elements.mobileDrawer);
+}
+
+function openLoginModal() {
+  if (!elements.loginModal) return;
+
+  openModal(elements.loginModal);
+  clearTimeout(toastTimer);
+
+  window.setTimeout(() => {
+    elements.loginIdentity?.focus();
+  }, 0);
+}
+
+function closeLoginModal() {
+  if (!elements.loginModal) return;
+
+  closeModal(elements.loginModal);
+  if (elements.loginStatus) elements.loginStatus.textContent = "";
+  if (elements.loginForm) elements.loginForm.reset();
+}
+
+function handleLoginSubmit(event) {
+  event.preventDefault();
+
+  const identity = elements.loginIdentity?.value.trim() || "";
+  const password = elements.loginPassword?.value || "";
+  const remember = Boolean(elements.rememberLogin?.checked);
+
+  if (!identity || !password) {
+    if (elements.loginStatus) {
+      elements.loginStatus.textContent = "Vui lòng nhập đầy đủ email/số điện thoại và mật khẩu.";
+    }
+    return;
+  }
+
+  if (elements.loginStatus) {
+    elements.loginStatus.textContent = remember
+      ? "Đăng nhập thử thành công, tài khoản sẽ được ghi nhớ trên thiết bị này."
+      : "Đăng nhập thử thành công.";
+  }
+
+  showToast("Đăng nhập thử thành công");
+  closeLoginModal();
 }
 
 function openModal(modal) {
@@ -493,8 +544,18 @@ function initEvents() {
   });
 
   elements.openMobileMenu?.addEventListener("click", () => openDrawer(elements.mobileDrawer));
+  elements.openLoginModal?.addEventListener("click", openLoginModal);
 
-  elements.globalBackdrop?.addEventListener("click", closeAllDrawers);
+  elements.globalBackdrop?.addEventListener("click", () => {
+    closeAllDrawers();
+    closeLoginModal();
+  });
+
+  elements.loginForm?.addEventListener("submit", handleLoginSubmit);
+
+  document.querySelectorAll('[data-close-modal="loginModal"]').forEach((button) => {
+    button.addEventListener("click", closeLoginModal);
+  });
 
   document.querySelectorAll("[data-close-drawer]").forEach((button) => {
     button.addEventListener("click", () => {
@@ -579,6 +640,7 @@ function initEvents() {
     if (event.key === "Escape") {
       closeAllDrawers();
       closeModal(elements.productModal);
+      closeLoginModal();
     }
   });
 
