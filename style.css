@@ -83,10 +83,6 @@ img {
 .topbar .header__main,
 .topbar .navbar__inner,
 .topbar .contact-bar__inner,
-.topbar .service-strip__inner {
-  display: flex;
-  align-items: center;
-}
 .topbar__inner {
   justify-content: space-between;
   gap: 20px;
@@ -307,7 +303,6 @@ img {
 .category-sidebar,
 .hero-slider,
 .hero-promos,
-.service-card,
 .product-card,
 .news-card,
 .support-box,
@@ -584,44 +579,7 @@ img {
   width: 100%;
 }
 
-.service-strip {
-  padding: 8px 0 0;
-}
-.service-strip__inner {
-  gap: 16px;
-  align-items: stretch;
-}
 
-.service-card {
-  flex: 1;
-  min-width: 0;
-  padding: 20px 18px;
-  border-radius: 20px;
-  display: flex;
-  gap: 14px;
-  align-items: flex-start;
-}
-.service-card > span {
-  width: 48px;
-  height: 48px;
-  border-radius: 16px;
-  display: grid;
-  place-items: center;
-  background: rgba(225, 37, 27, 0.1);
-  font-size: 22px;
-  flex-shrink: 0;
-}
-.service-card strong {
-  display: block;
-  margin-bottom: 4px;
-  font-size: 16px;
-}
-.service-card p {
-  margin: 0;
-  color: var(--text-soft);
-  line-height: 1.6;
-  font-size: 14px;
-}
 
 .contact-bar {
   padding: 26px 0 8px;
@@ -1742,7 +1700,6 @@ body[data-theme=dark] .tab-btn,
 body[data-theme=dark] .category-sidebar,
 body[data-theme=dark] .hero-slider,
 body[data-theme=dark] .hero-promos,
-body[data-theme=dark] .service-card,
 body[data-theme=dark] .product-card,
 body[data-theme=dark] .news-card,
 body[data-theme=dark] .support-box,
@@ -1820,7 +1777,6 @@ body[data-theme=dark] .footer__col a,
 body[data-theme=dark] .contact-bar p,
 body[data-theme=dark] .news-card__body p,
 body[data-theme=dark] .support-list li,
-body[data-theme=dark] .service-card p,
 body[data-theme=dark] .product-modal__info p,
 body[data-theme=dark] .logo__text span,
 body[data-theme=dark] .support-pill span,
@@ -1888,24 +1844,23 @@ body[data-theme=dark] .modal__overlay {
   body:not([data-theme]) .topbar {
     background: #020617;
   }
-  body:not([data-theme]) .searchbar,
-  body:not([data-theme]) .support-pill,
-  body:not([data-theme]) .icon-card,
-  body:not([data-theme]) .theme-toggle,
-  body:not([data-theme]) .tab-btn,
-  body:not([data-theme]) .category-sidebar,
-  body:not([data-theme]) .hero-slider,
-  body:not([data-theme]) .hero-promos,
-  body:not([data-theme]) .service-card,
-  body:not([data-theme]) .product-card,
-  body:not([data-theme]) .news-card,
-  body:not([data-theme]) .support-box,
-  body:not([data-theme]) .footer__col,
-  body:not([data-theme]) .brand-card,
-  body:not([data-theme]) .cart-item,
-  body:not([data-theme]) .empty-state,
-  body:not([data-theme]) .product-card__actions .btn-quick,
-  body:not([data-theme]) .modal__close {
+body:not([data-theme]) .searchbar,
+body:not([data-theme]) .support-pill,
+body:not([data-theme]) .icon-card,
+body:not([data-theme]) .theme-toggle,
+body:not([data-theme]) .tab-btn,
+body:not([data-theme]) .category-sidebar,
+body:not([data-theme]) .hero-slider,
+body:not([data-theme]) .hero-promos,
+body:not([data-theme]) .product-card,
+body:not([data-theme]) .news-card,
+body:not([data-theme]) .support-box,
+body:not([data-theme]) .footer__col,
+body:not([data-theme]) .brand-card,
+body:not([data-theme]) .cart-item,
+body:not([data-theme]) .empty-state,
+body:not([data-theme]) .product-card__actions .btn-quick,
+body:not([data-theme]) .modal__close {
     background: var(--surface);
     border-color: var(--border);
     box-shadow: var(--shadow);
@@ -1969,14 +1924,13 @@ body[data-theme=dark] .modal__overlay {
   body:not([data-theme]) .footer {
     color: rgba(255, 255, 255, 0.84);
   }
-  body:not([data-theme]) .footer__col p,
-  body:not([data-theme]) .footer__col a,
-  body:not([data-theme]) .contact-bar p,
-  body:not([data-theme]) .news-card__body p,
-  body:not([data-theme]) .support-list li,
-  body:not([data-theme]) .service-card p,
-  body:not([data-theme]) .product-modal__info p,
-  body:not([data-theme]) .logo__text span,
+body:not([data-theme]) .footer__col p,
+body:not([data-theme]) .footer__col a,
+body:not([data-theme]) .contact-bar p,
+body:not([data-theme]) .news-card__body p,
+body:not([data-theme]) .support-list li,
+body:not([data-theme]) .product-modal__info p,
+body:not([data-theme]) .logo__text span,
   body:not([data-theme]) .support-pill span,
   body:not([data-theme]) .icon-card__text,
   body:not([data-theme]) .product-card__meta {

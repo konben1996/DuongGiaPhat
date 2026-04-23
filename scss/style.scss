@@ -49,9 +49,7 @@ body {
   font-family: "Inter", sans-serif;
   color: var(--text);
   background: var(--bg);
-  transition:
-    background-color var(--theme-transition),
-    color var(--theme-transition);
+  transition: background-color var(--theme-transition), color var(--theme-transition);
 
   &.is-locked {
     overflow: hidden;
@@ -98,15 +96,12 @@ img {
   background: #0b1220;
   color: rgba(255, 255, 255, 0.86);
   font-size: 14px;
-  transition:
-    background-color var(--theme-transition),
-    color var(--theme-transition);
+  transition: background-color var(--theme-transition), color var(--theme-transition);
 
   &__inner,
   .header__main,
   .navbar__inner,
-  .contact-bar__inner,
-  .service-strip__inner {
+  .contact-bar__inner {
     display: flex;
     align-items: center;
   }
@@ -145,11 +140,7 @@ img {
   background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(14px);
   box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
-  transition:
-    background-color var(--theme-transition),
-    color var(--theme-transition),
-    border-color var(--theme-transition),
-    box-shadow var(--theme-transition);
+  transition: background-color var(--theme-transition), color var(--theme-transition), border-color var(--theme-transition), box-shadow var(--theme-transition);
 
   &__main {
     display: flex;
@@ -269,12 +260,7 @@ img {
   background: var(--surface);
   border: 1px solid var(--border);
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
-  transition:
-    background var(--transition),
-    border-color var(--transition),
-    color var(--transition),
-    transform var(--transition),
-    box-shadow var(--transition);
+  transition: background var(--transition), border-color var(--transition), color var(--transition), transform var(--transition), box-shadow var(--transition);
 }
 
 .login-btn {
@@ -288,18 +274,12 @@ img {
   font-weight: 700;
   text-align: center;
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
-  transition:
-    background var(--transition),
-    border-color var(--transition),
-    color var(--transition),
-    transform var(--transition),
-    box-shadow var(--transition);
+  transition: background var(--transition), border-color var(--transition), color var(--transition), transform var(--transition), box-shadow var(--transition);
 
   &:hover,
   &:focus-visible {
     transform: translateY(-2px);
     box-shadow: 0 14px 32px rgba(225, 37, 27, 0.28);
-   
   }
 }
 
@@ -324,11 +304,7 @@ img {
   border-top: 1px solid rgba(229, 231, 235, 0.8);
   border-bottom: 1px solid rgba(229, 231, 235, 0.8);
   background: #fff;
-  transition:
-    background-color var(--theme-transition),
-    color var(--theme-transition),
-    border-color var(--theme-transition),
-    box-shadow var(--theme-transition);
+  transition: background-color var(--theme-transition), color var(--theme-transition), border-color var(--theme-transition), box-shadow var(--theme-transition);
 
   &__inner {
     display: flex;
@@ -344,9 +320,7 @@ img {
       font-size: 14px;
       position: relative;
       padding: 18px 0 14px;
-      transition:
-        color var(--transition),
-        transform var(--transition);
+      transition: color var(--transition), transform var(--transition);
 
       &::after {
         content: "";
@@ -386,7 +360,6 @@ img {
 .category-sidebar,
 .hero-slider,
 .hero-promos,
-.service-card,
 .product-card,
 .news-card,
 .support-box,
@@ -395,11 +368,7 @@ img {
   background: var(--surface);
   border: 1px solid rgba(229, 231, 235, 0.7);
   box-shadow: var(--shadow);
-  transition:
-    background-color var(--theme-transition),
-    color var(--theme-transition),
-    border-color var(--theme-transition),
-    box-shadow var(--theme-transition);
+  transition: background-color var(--theme-transition), color var(--theme-transition), border-color var(--theme-transition), box-shadow var(--theme-transition);
 }
 
 .category-sidebar,
@@ -697,49 +666,6 @@ img {
 
   &--block {
     width: 100%;
-  }
-}
-
-.service-strip {
-  padding: 8px 0 0;
-
-  &__inner {
-    gap: 16px;
-    align-items: stretch;
-  }
-}
-
-.service-card {
-  flex: 1;
-  min-width: 0;
-  padding: 20px 18px;
-  border-radius: 20px;
-  display: flex;
-  gap: 14px;
-  align-items: flex-start;
-
-  > span {
-    width: 48px;
-    height: 48px;
-    border-radius: 16px;
-    display: grid;
-    place-items: center;
-    background: rgba(225, 37, 27, 0.1);
-    font-size: 22px;
-    flex-shrink: 0;
-  }
-
-  strong {
-    display: block;
-    margin-bottom: 4px;
-    font-size: 16px;
-  }
-
-  p {
-    margin: 0;
-    color: var(--text-soft);
-    line-height: 1.6;
-    font-size: 14px;
   }
 }
 
@@ -1086,11 +1012,7 @@ img {
   margin-top: 60px;
   background: #0b1220;
   color: rgba(255, 255, 255, 0.8);
-  transition:
-    background-color var(--theme-transition),
-    color var(--theme-transition),
-    border-color var(--theme-transition),
-    box-shadow var(--theme-transition);
+  transition: background-color var(--theme-transition), color var(--theme-transition), border-color var(--theme-transition), box-shadow var(--theme-transition);
 
   &__grid {
     padding: 56px 0 28px;
@@ -1169,12 +1091,7 @@ img {
   box-shadow: -20px 0 50px rgba(15, 23, 42, 0.18);
   padding: 24px;
   transform: translateX(105%);
-  transition:
-    transform var(--transition),
-    background-color var(--theme-transition),
-    color var(--theme-transition),
-    border-color var(--theme-transition),
-    box-shadow var(--theme-transition);
+  transition: transform var(--transition), background-color var(--theme-transition), color var(--theme-transition), border-color var(--theme-transition), box-shadow var(--theme-transition);
   overflow-y: auto;
 
   &.is-open {
@@ -1198,12 +1115,7 @@ img {
       background: var(--surface-2);
       font-weight: 600;
       border: 1px solid transparent;
-      transition:
-        transform var(--transition),
-        background var(--transition),
-        color var(--transition),
-        border-color var(--transition),
-        box-shadow var(--transition);
+      transition: transform var(--transition), background var(--transition), color var(--transition), border-color var(--transition), box-shadow var(--transition);
 
       &:hover,
       &:focus-visible,
@@ -1332,11 +1244,7 @@ img {
     border-radius: 28px;
     padding: 26px;
     box-shadow: 0 28px 80px rgba(15, 23, 42, 0.28);
-    transition:
-      background-color var(--theme-transition),
-      color var(--theme-transition),
-      border-color var(--theme-transition),
-      box-shadow var(--theme-transition);
+    transition: background-color var(--theme-transition), color var(--theme-transition), border-color var(--theme-transition), box-shadow var(--theme-transition);
 
     &--product {
       width: min(calc(100% - 24px), 900px);
@@ -1464,11 +1372,7 @@ img {
     overflow: hidden;
     background: var(--surface);
     box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
-    transition:
-      transform var(--transition),
-      border-color var(--transition),
-      box-shadow var(--transition),
-      background-color var(--theme-transition);
+    transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition), background-color var(--theme-transition);
 
     &:hover,
     &:focus-visible {
@@ -1574,10 +1478,7 @@ img {
   color: #fff;
   font-size: 22px;
   box-shadow: 0 16px 35px rgba(15, 23, 42, 0.18);
-  transition:
-    transform var(--transition),
-    box-shadow var(--transition),
-    filter var(--transition);
+  transition: transform var(--transition), box-shadow var(--transition), filter var(--transition);
   background: linear-gradient(135deg, var(--primary), var(--primary-dark));
 
   &:hover,
@@ -1615,12 +1516,7 @@ img {
   border: 1px solid var(--border);
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
   color: var(--text);
-  transition:
-    background var(--transition),
-    border-color var(--transition),
-    color var(--transition),
-    transform var(--transition),
-    box-shadow var(--transition);
+  transition: background var(--transition), border-color var(--transition), color var(--transition), transform var(--transition), box-shadow var(--transition);
 
   &:hover,
   &:focus-visible {
@@ -1702,14 +1598,9 @@ img {
     flex-basis: 100%;
   }
 
-  .service-strip__inner,
   .support-section__grid,
   .product-modal {
     grid-template-columns: 1fr;
-  }
-
-  .service-strip__inner {
-    display: grid;
   }
 
   .hero__grid,
@@ -2052,7 +1943,6 @@ body[data-theme="dark"] {
   .category-sidebar,
   .hero-slider,
   .hero-promos,
-  .service-card,
   .product-card,
   .news-card,
   .support-box,
@@ -2144,7 +2034,6 @@ body[data-theme="dark"] {
   .contact-bar p,
   .news-card__body p,
   .support-list li,
-  .service-card p,
   .product-modal__info p,
   .logo__text span,
   .support-pill span,
@@ -2229,7 +2118,6 @@ body[data-theme="dark"] {
     .category-sidebar,
     .hero-slider,
     .hero-promos,
-    .service-card,
     .product-card,
     .news-card,
     .support-box,
@@ -2321,7 +2209,6 @@ body[data-theme="dark"] {
     .contact-bar p,
     .news-card__body p,
     .support-list li,
-    .service-card p,
     .product-modal__info p,
     .logo__text span,
     .support-pill span,
