@@ -9,8 +9,7 @@
   &__inner,
   .header__main,
   .navbar__inner,
-  .contact-bar__inner,
-  .service-strip__inner {
+  .contact-bar__inner {
     display: flex;
     align-items: center;
   }
@@ -506,49 +505,6 @@
 
   &--green {
     background: linear-gradient(135deg, #10b981, #065f46);
-  }
-}
-
-.service-strip {
-  padding: 8px 0 0;
-
-  &__inner {
-    gap: 16px;
-    align-items: stretch;
-  }
-}
-
-.service-card {
-  flex: 1;
-  min-width: 0;
-  padding: 20px 18px;
-  border-radius: 20px;
-  display: flex;
-  gap: 14px;
-  align-items: flex-start;
-
-  > span {
-    width: 48px;
-    height: 48px;
-    border-radius: 16px;
-    display: grid;
-    place-items: center;
-    background: rgba(225, 37, 27, 0.1);
-    font-size: 22px;
-    flex-shrink: 0;
-  }
-
-  strong {
-    display: block;
-    margin-bottom: 4px;
-    font-size: 16px;
-  }
-
-  p {
-    margin: 0;
-    color: var(--text-soft);
-    line-height: 1.6;
-    font-size: 14px;
   }
 }
 
